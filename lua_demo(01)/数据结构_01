@@ -1,0 +1,15 @@
+list={}
+
+--返回一个表，第一个值为first,最后一个值为-1
+function list.new()
+	return list.first=0,last=-1
+end
+
+
+local test01 = list.new()
+print(test01.first,test01.last)
+
+
+
+
+
