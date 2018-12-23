@@ -1,30 +1,17 @@
-local Student = require("Student");
 
-local s1 = Student.SharedInstance();
-local s2 = Student.SharedInstance();
+require("tools")
 
+local v1 = tools.getVector3(1,2,3);
 
+local dis = tools.getDistance(v1);
+print(string.format("distance: %0.2f",dis));
 
-
-s1.m_Name="s1";
----表实例化返回的对象为什么是同一个表
-Test={}
-function Test:Create()
-	o=o or {}
-	setmetatable(o,{_index=self})
-	setmetatable(self,{_index=self})
-	return o;
-end
-
-local t1=Test:Create();
-local t2=Test:Create();
-
-print(game)
-print(t1);
-print(t2);
+local nor = tools.getNormalized(v1);
+print(string.format("noramlized: x=%0.2f y=%0.2f z=%0.2f",nor.x,nor.y,nor.z))
 
 
+local v2 = tools.getVector3(1,0,0);
+local v3 = tools.getVector3(1,-1,0);
+print("distance=",tools.getDistance(v2,v3))
 
-
-
-
+print("angle=",tools.getAngle(v2,v3));
